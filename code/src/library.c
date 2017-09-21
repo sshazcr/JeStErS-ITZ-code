@@ -124,6 +124,30 @@ void lineargear(void) {
 void goalgrabber(void) {	//use buttons for this not a joystick 
 }
 
+void GOALGRAB(void) {
+	if (joystickGetDigital(1,5,JOY_UP)) {
+	smartMotorSet(5,20); }
+	else if (joystickGetDigital(1,5,JOY_DOWN) {
+	smartMotorSet (5,-20);}
+	else {  
+	smartMotorSet(5,0);
+	}
+delay(20);
+}
+
+void CHAINBAR(void) { //not partner joystivk
+	if(joystickGetAnalog(JS_VEXNET, JS_Left_x)>30) { 
+		smartMotorSet(CHAINBAR_R, -joystickGetAnalog(JS_VEXNET, JS_left_x)-60);
+	}
+	else if(joystickGetAnalog(JS_VEXNET, JS_left_x_x)<-30) {
+		smartMotorSet(CHAINBAR, -joystickGetAnalog(JS_VEXNET, JS_Left_x)+60);
+	}
+	else {
+		smartMotorSet(CHAINBAR, 0);
+} 
+}
+
+
 void chainbar(void) {  //WILL BE FOR PARTNER JOYSTICK 
 	if(joystickGetAnalog(JS_PARTNER, 3)>60) {
 		smartMotorSet(CHAINBAR_MOTORPORT, joystickGetAnalog(JS_PARTNER, 3)-60);
