@@ -27,7 +27,5 @@
  * so, the robot will await a switch to another mode or disable/enable cycle.
  */
 void autonomous() {
-	motorSet(2, 127);
-	delay(1500);
-	motorSet(2, 0);
+	//autotest1();
 }

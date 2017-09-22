@@ -58,7 +58,7 @@ void tankdrive(){
 		else {
 		smartMotorSet(DRIVETRAIN_RB, 0);
 		}
-		if(joystickGetAnalog(JS_VEXNET, JS_Right_y)>20) {
+		if(joystickGetAnalog(JS_VEXNET, JS_Right_y)>20) {    //BoX tHe CoMmA bUt
 		smartMotorSet(DRIVETRAIN_RF, joystickGetAnalog(JS_VEXNET, JS_Right_y));
 		}
 		else if(joystickGetAnalog(JS_VEXNET, JS_Right_y)<-20) {
@@ -75,7 +75,7 @@ void tankdrive(){
 		}
 		else {
 		smartMotorSet(DRIVETRAIN_LB, 0);
-		}
+		}                                                              //gabe is dying lol
 		if(joystickGetAnalog(JS_VEXNET, JS_Left_y)>20) {
 		smartMotorSet(DRIVETRAIN_LF, -joystickGetAnalog(JS_VEXNET, JS_Left_y));
 		}
@@ -92,7 +92,7 @@ void conegrabber(void) {
 			smartMotorSet(6, 64);     //have someone check this
 		}
 		else if(joystickGetDigital(1, 6, JOY_DOWN)) { 
-			smartMotorSet(6, 64);
+			smartMotorSet(6, -64);
 		}
 		else {
 			smartMotorSet(6, 0); //i am better than michelle lol
@@ -117,7 +117,7 @@ void lineargear(void) {
 	}
 	else {
 		smartMotorSet(LINEARGEAR_L, 0);
-	}
+	} //"oh fudge" -elaina
 		delay(20);
 }
 /*
@@ -139,4 +139,32 @@ void chainbar(void) {  //WILL BE FOR PARTNER JOYSTICK
 void debug(void) {
 	smartMotorSet(9, joystickGetAnalog(JS_VEXNET, 4)); //i am still better than michelle :D
 	delay(20);
+}
+
+
+////////////////////////////////////////
+////Functions Called by auto.c /////////
+////////////////////////////////////////
+void autotest1(void) {
+	encoderReset(driveEncoderR);
+	while(encoderGet(driveEncoderR)<1501) {
+	smartMotorSet(2, 120);     //"ahhhhhh shut up children" -michelle 9 21 17
+	smartMotorSet(3, 120);
+	smartMotorSet(4, 120);       //"i can barely understand spanish" -elaina 9 21 17
+	smartMotorSet(5, 120);
+	delay(50);
+	}
+	while(1499<encoderGet(driveEncoderR)<1801) {  //"IM NOT DERILIOUS YET DR HESTER!!!!!1!" -michelle 9 21 17
+	smartMotorSet(2, 80);
+	smartMotorSet(3, 80);
+	smartMotorSet(4, 80);
+	smartMotorSet(5, 80);
+	delay(50);
+	}
+	smartMotorSet(2, 0);
+	smartMotorSet(3, 0);
+	smartMotorSet(4, 0);
+	smartMotorSet(5, 0);
+	encoderReset(driveEncoderR);
+	delay(50);
 }

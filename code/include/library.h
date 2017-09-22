@@ -75,3 +75,4 @@ void lineargear(void);
 void goalgrabber(void);
 void chainbar(void);
 void debug(void);
+void autotest1(void);
