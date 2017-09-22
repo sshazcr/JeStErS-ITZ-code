@@ -42,7 +42,7 @@ void operatorControl() {
 		//conegrabber();
 		//goalgrabber();
 		//chainbar();
-		debug();
+		//debug();
 		delay(20);
 	}
 }
