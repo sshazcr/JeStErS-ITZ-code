@@ -1,0 +1,13 @@
+linear gear test
+test 1: both gears functioning but motor 7 is moving opposite direction. making joystickGetAnalog 
+negative to compensate
+test 2: linear gears working as intended
+
+drivetrain test
+changes made: adding deadzones to controller and testing if motors are moving in the right direction
+because they reversed the front/back heading of the robot thingy
+test 1: deadzones do seem to work and left joystick controls right motors and vice versa. for test 2
+reversing the controls is a good idea and umm yeah. also replacing motor ports (ie 2 3 4 5) with
+respective #define functioninos (eg DRIVETRAIN_LB is 4). also going to test linear gears + drivetrain
+both in next test
+test 2: linear gear works but only right one goes up. might've been a hardware problem
