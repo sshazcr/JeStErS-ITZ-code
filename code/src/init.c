@@ -42,7 +42,7 @@ void initialize() {
   for (int i=0; i<10; i++) {
     slewTarget[i]=0;
     motorSet(i+1,slewTarget[i]);
-  }
+  } //i am still better than michelle
   driveEncoderR = encoderInit(SHFT_TOP_PORT, SHFT_BOT_PORT, false);
   //driveEncoderL = encoderInit( , , false);
   //task runs in background during driver operation

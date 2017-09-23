@@ -1,0 +1,5 @@
+drivetrain tests
+test 1: motors are moving but one side of the motors are moving backwards. inverted motors 2 and 3
+test 2: motors are moving in same direction but left joystick controlled right motors and vice versa.
+        switched joystick values
+test 3: success

@@ -1,0 +1,11 @@
+tests done today:
+linear gear maintenance-
+just double checking it works
+test 1: left linear gears are probably running opposite direction. reversing values so that
+itll go same direction. also going to half speed the gears some more from 60 to 70ish
+
+changes to code:
+-fixed linear gear
+-started to clean up drivetrain
+-finished cleaning up drivetrain, should probably double check and test it
+cleaned up linear gear code
