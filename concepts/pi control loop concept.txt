@@ -1,0 +1,14 @@
+int kP = <constant value probably .1 or something>
+int kI = ?????????? another constant
+int totalError = 0;
+int desiredValue = <whatever desired value is>
+
+while(1/some other thing idk, isAutonomous??) {
+	int currValue = getEncoder;
+	int currError = currValue - desiredValue;
+	totalError += currError;
+	
+	int currSpeed = currError / kP + totalError / kI;
+	motorSet(<port>, CurrSpeed);
+	delay(25);
+}

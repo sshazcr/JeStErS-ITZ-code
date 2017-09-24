@@ -1,0 +1,9 @@
+int kP = .1;
+int desiredValue = <whatever desired value is>;
+
+while(1) {
+	int currValue = getEncoder;
+	int currError = desiredValue - currValue
+	int currSpeed = kP * currError
+	delay(25);
+}
