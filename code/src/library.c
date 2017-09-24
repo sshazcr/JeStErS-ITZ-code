@@ -114,8 +114,17 @@ void debug(void) {
 	smartMotorSet(9, joystickGetAnalog(JS_VEXNET, 4)); 
 	delay(20);
 }
+/*
+I'm just a Jester,
+it's jest me.
 
+I'm an idiota 
+In a tree.
 
+I go to Worlds
+And the earth cries in shame.
+-some Jester from 2016-17 (Jestme.txt)
+*/
 ////////////////////////////////////////
 ////Functions called by auto.c /////////
 ////////////////////////////////////////
