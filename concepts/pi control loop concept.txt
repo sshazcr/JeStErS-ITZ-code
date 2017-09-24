@@ -3,12 +3,15 @@ int kI = ?????????? another constant
 int totalError = 0;
 int desiredValue = <whatever desired value is>
 
-while(1 <or> getEncoder(encoder stuff)<desiredValue) {
+while(getEncoder(...) <= desiredValue) {
 	int currValue = getEncoder;
 	int currError = currValue - desiredValue;
 	totalError += currError;
 	
 	int currSpeed = currError * kP + totalError * kI;
+	motorSet(<port>, CurrSpeed);
+	motorSet(<port>, CurrSpeed);
+	motorSet(<port>, CurrSpeed);
 	motorSet(<port>, CurrSpeed);
 	delay(25);
 }
