@@ -5,6 +5,7 @@ while(getEncoder(...) <= desiredValue) {
 	int currValue = getEncoder;
 	int currError = desiredValue - currValue;
 	int currSpeed = kP * currError;
+
 	motorSet(<port>, CurrSpeed);
 	motorSet(<port>, CurrSpeed);
 	motorSet(<port>, CurrSpeed);

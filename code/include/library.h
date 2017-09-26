@@ -32,10 +32,10 @@ Encoder driveEncoderL
 #define dpad_r 8 //right d-pad
 	
 //Motor ports - define motor ports
-#define DRIVETRAIN_RB  2        
-#define DRIVETRAIN_RF  3        
-#define DRIVETRAIN_LB  4     
-#define DRIVETRAIN_LF  5       
+#define DRIVETRAIN_RB  4        
+#define DRIVETRAIN_RF  5        
+#define DRIVETRAIN_LB  2     
+#define DRIVETRAIN_LF  3       
 #define LINEARGEAR_R  7
 #define LINEARGEAR_L  8
 #define CHAINBAR_MOTORPORT 9
@@ -76,3 +76,4 @@ void goalgrabber(void);
 void chainbar(void);
 void debug(void);
 void autotest1(void);
+void plooptest1(void);

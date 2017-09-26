@@ -69,10 +69,10 @@ void tankdrive(){
 }
 void conegrabber(void) {
 	if(joystickGetDigital(1, 6, JOY_UP)) { //this block of code is for cone manipulator
-		smartMotorSet(6, 64);     //have someone check this
+		smartMotorSet(6, 32);     //have someone check this
 	}
 	else if(joystickGetDigital(1, 6, JOY_DOWN)) { 
-		smartMotorSet(6, -64);
+		smartMotorSet(6, -32);
 	}
 	else {
 		smartMotorSet(6, 0); 
@@ -97,7 +97,7 @@ void lineargear(void) {
 
 void goalgrabber(void) {	//use buttons for this not a joystick 
 }
-
+/*
 void chainbar(void) {  //WILL BE FOR PARTNER JOYSTICK 
 	if(joystickGetAnalog(JS_PARTNER, 3)>60) {
 		smartMotorSet(CHAINBAR_MOTORPORT, joystickGetAnalog(JS_PARTNER, 3)-60); //might be two motors but this codes for one motor right now
@@ -109,7 +109,7 @@ void chainbar(void) {  //WILL BE FOR PARTNER JOYSTICK
 		smartMotorSet(CHAINBAR_MOTORPORT, 0);
 	}
 }
-
+*/
 void debug(void) {
 	smartMotorSet(9, joystickGetAnalog(JS_VEXNET, 4)); 
 	delay(20);
@@ -126,7 +126,7 @@ And the earth cries in shame.
 -some Jester from 2016-17 (Jestme.txt)
 */
 ////////////////////////////////////////
-////Functions called by auto.c /////////
+//////Functions called by auto.c ///////
 ////////////////////////////////////////
 void autotest1(void) {
 	encoderReset(driveEncoderR);
@@ -151,3 +151,18 @@ void autotest1(void) {
 		encoderReset(driveEncoderR);
 		delay(50);
 }
+void plooptest1(void) {
+	int kP = .1;
+
+while(getEncoder(driveEncoderR) <= desiredValue) {
+	int desiredValue = 1800;
+	int currValue = getEncoder(driveEncoderR);
+	int currError = desiredValue - currValue;
+	int currSpeed = kP * currError; 
+	//when desiredValue is adjusted correctly this autonomous function might win 2 points in autonomous (dpends on some rules)
+	motorSet(DRIVETRAIN_LB CurrSpeed);  
+	motorSet(DRIVETRAIN_LF, CurrSpeed);
+	motorSet(DRIVETRAIN_RB, CurrSpeed);
+	motorSet(DRIVETRAIN_RF, CurrSpeed);
+	delay(25);
+} }

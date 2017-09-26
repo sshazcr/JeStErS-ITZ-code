@@ -1,0 +1,19 @@
+void plooptest2(void) {
+	int kP = .1;
+
+while(getEncoder(driveEncoderR) <= desiredValue) {
+	int desiredValue = 1800;
+	int currValue = getEncoder(driveEncoderR);
+	int currError = desiredValue - currValue;
+	int currSpeed = kP * currError;
+
+	motorSet(DRIVETRAIN_LB CurrSpeed);
+	motorSet(DRIVETRAIN_LF, CurrSpeed);
+	motorSet(DRIVETRAIN_RB, CurrSpeed);
+	motorSet(DRIVETRAIN_RF, CurrSpeed);
+	delay(25);
+}
+while(some thing that is true only after going forward 5 rotations) {
+	int desiredValue = 
+}	
+}
