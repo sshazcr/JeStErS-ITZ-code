@@ -15,7 +15,7 @@
 #define JS_VEXNET 1
 #define JS_PARTNER 2
 
-//Sensors - for sensors, and sensor ports
+//digital sensors
 #define RSHFT_TOP 1
 #define RSHFT_BOT 2
 #define LSHFT_TOP 3
@@ -23,6 +23,10 @@
 
 Encoder driveEncoderR
 Encoder driveEncoderL
+
+//analog sensors
+#define POTGOAL 1
+#define POTCHAIN 2
 
 
 //joystick - digital channels
@@ -38,9 +42,11 @@ Encoder driveEncoderL
 #define DRIVETRAIN_LF  3       
 #define LINEARGEAR_R  7
 #define LINEARGEAR_L  8
-#define CHAINBAR_MOTORPORT 9
-#define CONEGRAB
-#define GOALGRAB
+#define CHAINBAR_L 1
+#define CHAINBAR_R 10
+#define CONEGRAB 9
+#define GOALGRAB_R
+#define GOALGRAB_L
 
 ///////////////////////////////
 //// Variables             ////
@@ -77,3 +83,4 @@ void chainbar(void);
 void debug(void);
 void autotest1(void);
 void plooptest1(void);
+void calibrate(void);

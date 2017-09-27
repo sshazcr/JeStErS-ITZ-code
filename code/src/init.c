@@ -38,13 +38,13 @@ void initializeIO() {
  */
 void initialize() {
   //start with motors off and slewTarget=0
-  int slewTarget[10]; //"i hate that axle caller" -gabe 925 17
+  int slewTarget[10];
   for (int i=0; i<10; i++) {
-    slewTarget[i]=0; //"ahhh shut up children" -michelle 9 21 17
-    motorSet(i+1,slewTarget[i]); //"vex speakers arent a sensor" -casey, probably
+    slewTarget[i]=0;
+    motorSet(i+1,slewTarget[i]);
   } //i am still better than michelle
-  driveEncoderR = encoderInit(SHFT_TOP_PORT, SHFT_BOT_PORT, false); //send help gabe is dying
-  //driveEncoderL = encoderInit( , , false); 
+  driveEncoderR = encoderInit(SHFT_TOP_PORT, SHFT_BOT_PORT, false);
+  //driveEncoderL = encoderInit( , , false);
   //task runs in background during driver operation
   //TASK_PRIORITY_DEFAULT - 1; lower priority than driver control & autonomous
    taskCreate (slewControlTask, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT - 1);

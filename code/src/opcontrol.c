@@ -43,6 +43,7 @@ void operatorControl() {
 		//goalgrabber();
 		//chainbar();
 		//debug();
+		//calibrate();
 		delay(20);
 	}
 }

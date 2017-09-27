@@ -1,13 +1,7 @@
 changes done today:
-
+-adding on to ploop2 concept (linear gear moving)
+-started coding the goal grabber and made a calibrate function to calibrate potentiometers used
 
 tests done today:
-"rat gears" (Yao 1) test:
--changes tested: unreversed motorSet values
 
-drivetrain maintenance:
--very very shameful hardware team rewired the robot so testing this
-
-ploop test 1:
--testing sensor is working and stuff
--also testing kP value and hypothesis that if CurrSpeed is >127 motor will run at 127
+SHAMEFUL SHAMEFUL HARDWARE PEOPLE NO TESTS DONE TODAY LOL

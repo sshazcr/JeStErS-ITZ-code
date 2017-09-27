@@ -1,8 +1,8 @@
 void plooptest2(void) {
 	int kP = .1;
 
-while(getEncoder(driveEncoderR) <= desiredValue) {
-	int desiredValue = 1800;
+while(getEncoder(driveEncoderR) <= desiredValue) { //go forward 7.5 rotations
+	int desiredValue = 2700;
 	int currValue = getEncoder(driveEncoderR);
 	int currError = desiredValue - currValue;
 	int currSpeed = kP * currError;
@@ -13,7 +13,15 @@ while(getEncoder(driveEncoderR) <= desiredValue) {
 	motorSet(DRIVETRAIN_RF, CurrSpeed);
 	delay(25);
 }
-while(some thing that is true only after going forward 5 rotations) {
-	int desiredValue = 
-}	
+while(getEncoder(driveEncoderR)>=2700) { //bring linear gear up
+	motorSet(LINEARGEAR_R, 64);
+	motorSet(LINEARGEAR_L, 64); //these values might need to be adjusted idk
+	delay(750);
+	motorSet(LINEARGEAR_R, 0);
+	motorSet(LINEARGEAR_L, 0);
+	encoderReset(driveEncoderR);
+	delay(50);
+}
+while(
+	
 }

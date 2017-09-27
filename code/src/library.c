@@ -94,22 +94,29 @@ void lineargear(void) {
 	}
 		delay(20);
 }
-
-void goalgrabber(void) {	//use buttons for this not a joystick 
+void calibrate(void) {
+	if(joystickGetDigital(1, 7, JOY_UP)) { //IMPORTANT!!! MUST HOLD THIS FOR AT LEAST ONE FULL SECOND
+		analogCalibrate(POTGOAL);
+		//analogCalibrate(POTCHAIN);
 }
-/*
+void goalgrabber(void) {	//use buttons for this not a joystick and PID control using potentiometer
+	if(joystickGetDigital(1, 5, JOY_DOWN)) {
+		
+	}
+}
+
 void chainbar(void) {  //WILL BE FOR PARTNER JOYSTICK 
 	if(joystickGetAnalog(JS_PARTNER, 3)>60) {
-		smartMotorSet(CHAINBAR_MOTORPORT, joystickGetAnalog(JS_PARTNER, 3)-60); //might be two motors but this codes for one motor right now
+		smartMotorSet(CHAINBAR_R, joystickGetAnalog(JS_PARTNER, 3)-60); //might be two motors but this codes for one motor right now
 	}
 	else if(joystickGetAnalog(JS_PARTNER, 3)<-60) {
-		smartMotorSet(CHAINBAR_MOTORPORT, joystickGetAnalog(JS_PARTNER, 3)+60);
+		smartMotorSet(CHAINBAR_R, joystickGetAnalog(JS_PARTNER, 3)+60);
 	}
 	else {
-		smartMotorSet(CHAINBAR_MOTORPORT, 0);
+		smartMotorSet(CHAINBAR_R, 0);
 	}
 }
-*/
+
 void debug(void) {
 	smartMotorSet(9, joystickGetAnalog(JS_VEXNET, 4)); 
 	delay(20);
@@ -153,16 +160,18 @@ void autotest1(void) {
 }
 void plooptest1(void) {
 	int kP = .1;
+	int desiredValue = 2700;
 
 while(getEncoder(driveEncoderR) <= desiredValue) {
-	int desiredValue = 1800;
 	int currValue = getEncoder(driveEncoderR);
 	int currError = desiredValue - currValue;
-	int currSpeed = kP * currError; 
-	//when desiredValue is adjusted correctly this autonomous function might win 2 points in autonomous (dpends on some rules)
-	motorSet(DRIVETRAIN_LB CurrSpeed);  
+	int currSpeed = kP * currError;
+
+	motorSet(DRIVETRAIN_LB CurrSpeed);
 	motorSet(DRIVETRAIN_LF, CurrSpeed);
 	motorSet(DRIVETRAIN_RB, CurrSpeed);
 	motorSet(DRIVETRAIN_RF, CurrSpeed);
 	delay(25);
-} }
+}
+
+}
