@@ -1,0 +1,23 @@
+void ploopliftgoal(void) {
+
+while(joystickGetDigital(1, 7, JOY_DOWN) {
+int kP = .1;
+int loadGoal = <when mob goal lifter is dropped & can load the mob goal>
+int currValue = analogReadCalibrated(POTGOAL)
+int currError = loadGoal - currValue
+int currSpeed = kP * currError
+
+smartMotorSet(GOALGRAB_R, currSpeed);
+smartMotorSet(GOALGRAB_L, currSpeed);
+}
+while(joystickGetDigital(1, 7, JOY_UP) {
+int kP = .1;
+int moveGoal = <when mob goal lifter is carried and lifted off the ground>
+int currValue = analogReadCalibrated(POTGOAL)
+int currError = moveGoal - currValue
+int currSpeed = kP * currError
+
+smartMotorSet(GOALGRAB_R, currSpeed);
+smartMotorSet(GOALGRAB_L, currSpeed);
+}
+}

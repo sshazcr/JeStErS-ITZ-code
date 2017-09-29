@@ -6,10 +6,10 @@
 
 
 //joystick - analog channels
-#define JS_Right_x  1
-#define JS_Right_y  2
-#define JS_Left_x 4
-#define JS_Left_y 3
+#define JS_RIGHT_X  1
+#define JS_RIGHT_Y  2
+#define JS_LEFT_X 4
+#define JS_LEFT_Y 3
 
 //joystick - for defining vexnet or partner joystick
 #define JS_VEXNET 1
@@ -30,23 +30,23 @@ Encoder driveEncoderL
 
 
 //joystick - digital channels
-#define shoulder_l 5 //left shoulder button
-#define shoulder_r 6 //right shoulder button
-#define dpad_l 7 //left d-pad
-#define dpad_r 8 //right d-pad
+#define SHOULDER_L 5 //left shoulder button
+#define SHOULDER_R 6 //right shoulder button
+#define DPAD_L 7 //left d-pad
+#define DPAD_R 8 //right d-pad
 	
 //Motor ports - define motor ports
 #define DRIVETRAIN_RB  4        
 #define DRIVETRAIN_RF  5        
 #define DRIVETRAIN_LB  2     
 #define DRIVETRAIN_LF  3       
-#define LINEARGEAR_R  7
-#define LINEARGEAR_L  8
-#define CHAINBAR_L 1
-#define CHAINBAR_R 10
-#define CONEGRAB 9
-#define GOALGRAB_R
-#define GOALGRAB_L
+#define LINEARGEAR_R   7
+#define LINEARGEAR_L   8
+#define CHAINBAR_R     9
+#define CHAINBAR_L     
+#define CONEGRAB
+#define GOALGRAB_R     1
+#define GOALGRAB_L     10
 
 ///////////////////////////////
 //// Variables             ////
@@ -84,3 +84,4 @@ void debug(void);
 void autotest1(void);
 void plooptest1(void);
 void calibrate(void);
+void ploopliftgoal(void);

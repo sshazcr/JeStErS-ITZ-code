@@ -68,25 +68,25 @@ void tankdrive(){
 	delay(20);
 }
 void conegrabber(void) {
-	if(joystickGetDigital(1, 6, JOY_UP)) { //this block of code is for cone manipulator
-		smartMotorSet(6, 32);     //have someone check this
+	if(joystickGetDigital(JS_VEXNET, SHOULDER_R, JOY_UP)) { //this block of code is for cone manipulator
+		smartMotorSet(CONEGRAB, 32);    
 	}
-	else if(joystickGetDigital(1, 6, JOY_DOWN)) { 
-		smartMotorSet(6, -32);
+	else if(joystickGetDigital(JS_VEXNET, SHOULDER_R, JOY_DOWN)) { 
+		smartMotorSet(CONEGRAB, -32);
 	}
 	else {
-		smartMotorSet(6, 0); 
+		smartMotorSet(CONEGRAB, 0); 
 	}
 	delay(20);	
 }
-void lineargear(void) {
-	if(joystickGetAnalog(JS_VEXNET, JS_Right_x)>70) { //linear gear code is set for half speed
-		smartMotorSet(LINEARGEAR_R, joystickGetAnalog(JS_VEXNET, JS_Right_x)-70);
-		smartMotorSet(LINEARGEAR_L, joystickGetAnalog(JS_VEXNET, JS_Right_x)-70);
+void lineargear(void) { //WILL BE FOR PARTNER JOYSTICK AHHHHHHHHH
+	if(joystickGetAnalog(JS_VEXNET, JS_RIGHT_X)>60) { //linear gear code is set for half speed
+		smartMotorSet(LINEARGEAR_R, joystickGetAnalog(JS_VEXNET, JS_RIGHT_X)-60);
+		smartMotorSet(LINEARGEAR_L, joystickGetAnalog(JS_VEXNET, JS_RIGHT_X)-60);
 	}
-	else if(joystickGetAnalog(JS_VEXNET, JS_Right_x)<-70) {
-		smartMotorSet(LINEARGEAR_R, joystickGetAnalog(JS_VEXNET, JS_Right_x)+70);
-		smartMotorSet(LINEARGEAR_L, joystickGetAnalog(JS_VEXNET, JS_Right_x)+70);
+	else if(joystickGetAnalog(JS_VEXNET, JS_RIGHT_X)<-60) {
+		smartMotorSet(LINEARGEAR_R, joystickGetAnalog(JS_VEXNET, JS_RIGHT_X)+60);
+		smartMotorSet(LINEARGEAR_L, joystickGetAnalog(JS_VEXNET, JS_RIGHT_X)+60);
 	}
 	else {
 		smartMotorSet(LINEARGEAR_R, 0);
@@ -95,30 +95,65 @@ void lineargear(void) {
 		delay(20);
 }
 void calibrate(void) {
-	if(joystickGetDigital(1, 7, JOY_UP)) { //IMPORTANT!!! MUST HOLD THIS FOR AT LEAST ONE FULL SECOND
+	if(joystickGetDigital(JS_VEXNET, DPAD_L, JOY_UP)) { //IMPORTANT!!! MUST HOLD THIS FOR AT LEAST ONE FULL SECOND
 		analogCalibrate(POTGOAL);
 		//analogCalibrate(POTCHAIN);
-}
-void goalgrabber(void) {	//use buttons for this not a joystick and PID control using potentiometer
-	if(joystickGetDigital(1, 5, JOY_DOWN)) {
-		
 	}
 }
+void goalgrabber(void) {  //i have a concept for a P loop for more control this 
+	if(joystickGetDigital(JS_VEXNET, SHOULDER_L, JOY_DOWN)) {
+		smartMotorSet(GOALGRAB_R, 25);
+		smartMotorSet(GOALGRAB_L, 25);
+	}
+	else if(joystickGetDigital(JS_VEXNET, SHOULDER_L, JOY_UP)) {
+		smartMotorSet(GOALGRAB_L, -25);
+		smartMotorSet(GOALGRAB_R, -25);
+	}
+	else {
+		smartMotorSet(GOALGRAB_L, 0);
+		smartMotorSet(GOALGRAB_R, 0);
+	}
+}
+void ploopliftgoal(void) {
+	while(joystickGetDigital(1, 5, JOY_DOWN) {
+		int kP = .1;
+		int loadGoal = <when mob goal lifter is dropped & can load the mob goal>
+		int currValue1 = analogReadCalibrated(POTGOAL)
+		int currError1 = loadGoal - currValue1
+		int currSpeed1 = kP * currError1
 
-void chainbar(void) {  //WILL BE FOR PARTNER JOYSTICK 
-	if(joystickGetAnalog(JS_PARTNER, 3)>60) {
-		smartMotorSet(CHAINBAR_R, joystickGetAnalog(JS_PARTNER, 3)-60); //might be two motors but this codes for one motor right now
+		smartMotorSet(GOALGRAB_R, currSpeed1);
+		smartMotorSet(GOALGRAB_L, currSpeed1);
 	}
-	else if(joystickGetAnalog(JS_PARTNER, 3)<-60) {
-		smartMotorSet(CHAINBAR_R, joystickGetAnalog(JS_PARTNER, 3)+60);
+	while(joystickGetDigital(1, 5, JOY_UP) {
+		int kP = .1;
+		int moveGoal = <when mob goal lifter is carried and lifted off the ground>
+		int currValue2 = analogReadCalibrated(POTGOAL)
+		int currError2 = moveGoal - currValue2
+		int currSpeed2 = kP * currError2
+
+		smartMotorSet(GOALGRAB_R, currSpeed2);
+		smartMotorSet(GOALGRAB_L, currSpeed2);
+		}
+	}
+
+void chainbar(void) {  //WILL BE FOR PARTNER JOYSTICK REMEMBER THIS AHHHHHHHHH
+	if(joystickGetAnalog(JS_VEXNET, JS_LEFT_Y)>40) {
+		smartMotorSet(CHAINBAR_R, joystickGetAnalog(JS_VEXNET, JS_LEFT_Y)-40);
+		smartMotorSet(CHAINBAR_L, joystickGetAnalog(JS_VEXNET, JS_LEFT_Y)-40);
+	}
+	else if(joystickGetAnalog(JS_VEXNET, JS_LEFT_Y)<-40) {
+		smartMotorSet(CHAINBAR_R, joystickGetAnalog(JS_VEXNET, JS_LEFT_Y)+40);
+		smartMotorSet(CHAINBAR_L, joystickGetAnalog(JS_VEXNET, JS_LEFT_Y)+40);
 	}
 	else {
 		smartMotorSet(CHAINBAR_R, 0);
+		smartMotorSet(CHAINBAR_L, 0);
 	}
 }
 
 void debug(void) {
-	smartMotorSet(9, joystickGetAnalog(JS_VEXNET, 4)); 
+	smartMotorSet(9, joystickGetAnalog(JS_VEXNET, JS_LEFT_Y)); 
 	delay(20);
 }
 /*
@@ -163,14 +198,14 @@ void plooptest1(void) {
 	int desiredValue = 2700;
 
 while(getEncoder(driveEncoderR) <= desiredValue) {
-	int currValue = getEncoder(driveEncoderR);
-	int currError = desiredValue - currValue;
-	int currSpeed = kP * currError;
+	int currValue3 = getEncoder(driveEncoderR);
+	int currError3 = desiredValue - currValue3;
+	int currSpeed3 = kP * currError3;
 
-	motorSet(DRIVETRAIN_LB CurrSpeed);
-	motorSet(DRIVETRAIN_LF, CurrSpeed);
-	motorSet(DRIVETRAIN_RB, CurrSpeed);
-	motorSet(DRIVETRAIN_RF, CurrSpeed);
+	motorSet(DRIVETRAIN_LB, CurrSpeed3);
+	motorSet(DRIVETRAIN_LF, CurrSpeed3);
+	motorSet(DRIVETRAIN_RB, CurrSpeed3);
+	motorSet(DRIVETRAIN_RF, CurrSpeed3);
 	delay(25);
 }
 

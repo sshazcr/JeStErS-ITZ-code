@@ -40,8 +40,9 @@ void operatorControl() {
 		tankdrive();	
 		lineargear();
 		//conegrabber();
-		//goalgrabber();
-		//chainbar();
+		goalgrabber();
+		//ploopliftgoal();
+		chainbar();
 		//debug();
 		//calibrate();
 		delay(20);
