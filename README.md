@@ -1,5 +1,5 @@
 # JeStErS-ITZ-code
-for VRC ITZ code
+for VRC ITZ code, coded in PROS
 
 This is pretty much a repository so that me and my partner can share our work more easily with each other
 
@@ -12,4 +12,3 @@ concepts that can be copy pasted from .txt files can be found in the concepts fo
 and remember:
 
   dont be stressed, just be oppressed!
-
