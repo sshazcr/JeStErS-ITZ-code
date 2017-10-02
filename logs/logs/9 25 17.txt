@@ -1,0 +1,9 @@
+changes done today:
+-added ploop test 1 to library.c and added the necessary support code
+-set kP to .1, needs testing
+-changed conegrab speeds from 64 to 32
+
+tests done today:
+
+LOLOLOLOLOLOLOLOLOLOLOL JK NO TESTS DONE TODAY THANKS A LOT SHAMEFUL HARDWARE PEOPLE
+

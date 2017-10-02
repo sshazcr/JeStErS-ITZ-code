@@ -1,0 +1,8 @@
+changes done today:
+-finished mob goal lifter code
+-adjusted chainbar code
+-adjusted linear gear values
+-changed everything important to the correct #define statements
+
+tests done today:
+shameful hardware people no tests done today

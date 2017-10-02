@@ -1,0 +1,7 @@
+changes done today:
+-adding on to ploop2 concept (linear gear moving)
+-started coding the goal grabber and made a calibrate function to calibrate potentiometers used
+
+tests done today:
+
+SHAMEFUL SHAMEFUL HARDWARE PEOPLE NO TESTS DONE TODAY LOL
