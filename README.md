@@ -7,6 +7,8 @@ code can be found in code folder
 
 Changes made to the code are documented in the logs folder
 
+  JeStErS-ITZ-code/logs/logs is a mistake dont touch that folder
+
 concepts that can be copy pasted from .txt files can be found in the concepts folder
 
 and remember:
