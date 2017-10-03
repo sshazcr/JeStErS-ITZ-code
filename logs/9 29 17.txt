@@ -1,20 +1,5 @@
 changes done today:
-
+discussed motor ports
 
 tests done today:
-"rat gears" (Yao 1) test:
--changes tested: unreversed motorSet values
-
-drivetrain maintenance:
--very very shameful hardware team rewired the robot so testing this
-
-ploop test 1:
--testing sensor is working and stuff
--also testing kP value and hypothesis that if CurrSpeed is >127 motor will run at 127
-
-chainbar test:
--hopefully we dont break the robot with this lol
-
-mobile goal lift test:
--testing P loop with this
-
+nope
